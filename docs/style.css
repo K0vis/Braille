@@ -17,9 +17,8 @@
 {
 	position: relative;
 	display: inline-block;
-	width: 100px;
-	height: 100px;
-	
+	width: 25%;
+	padding-top: 22%;
 }
 
 .switch input
@@ -38,9 +37,9 @@
 	right: 0;
 	bottom: 0;
 	background-color: white;
-	-webkit-transition: .4s;
-	transition: .4s;
-	border-radius: 50px;
+	-webkit-transition: .1s;
+	transition: .1s;
+	border-radius: 200px;
 	border-width: 5px;
 	border-style: solid;
 	
@@ -50,4 +49,12 @@ input:checked + .circle
 {
 	background-color: yellow;
 }
+
+.aspect
+{
+	width: 50%;
+	padding-top: 50%;
+	background-color: white;
+}
+
 
