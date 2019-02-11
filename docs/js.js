@@ -33,7 +33,11 @@ function changeLetter(index)
 			var item = items.join("");
 			newResult.html(item);
 			newResult.on("click", function(){
-				$(this).clone().insertBefore("#flush");
+				var copy = $(this).clone();
+				copy.on("click", function(){
+					$(this).remove();
+				});
+				copy.insertBefore("#flush");
 			});
 			$("#letter").append(newResult);
 		});
