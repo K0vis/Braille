@@ -13,6 +13,10 @@ window.onload = function() {
 		});
 		changeLetter(sum);
 	});
+	
+	$("#flush").on("click", function(){
+		$(".previous .myCard").remove();
+	});
 }
 
 var abc;
@@ -22,19 +26,22 @@ function changeLetter(index)
 	if(index != 0)
 	{
 		$("#letter").html('');
-		console.log(abc);
+		
 		$.each(abc[index - 1].alias, function(){
 			var newResult = $("<span></span>").addClass("largeText myCard");
 			var items = $.makeArray($(this));
 			var item = items.join("");
 			newResult.html(item);
+			newResult.on("click", function(){
+				$(this).clone().insertBefore("#flush");
+			});
 			$("#letter").append(newResult);
 		});
 	}
 	else
 	{
 		$("#letter").html('');
-		$("#letter").append($('<span>Betű</span>').addClass("largeText myCard"));
+		$("#letter").append($('<span>Karakterek</span>').addClass("largeText myCard font-weight-bold"));
 	}
 }
 
@@ -105,6 +112,5 @@ function createABC()
 		{index: "61", alias:["Y"]},
 		{index: "62", alias:["Ű"]},
 		{index: "63", alias:[""]}
-		
 	];
 }
