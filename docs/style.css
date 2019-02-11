@@ -87,6 +87,8 @@ input:checked + .circle
 	padding: 10px;
 }
 
+
+
 #flush
 {
 	display: block;
@@ -107,3 +109,17 @@ body
 	background-color: #efecec;
 	font-family: monospace;
 }
+
+@media(max-width: 1080px)
+{
+	.previous
+	{
+		visibility: hidden;
+	}
+	
+	.containerr
+	{
+		width: 80%;
+	}
+}
+

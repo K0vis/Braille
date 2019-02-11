@@ -1,7 +1,9 @@
 window.onload = function() {
 	/*Button aspect ratio*/
-	var y = $(".switch").css("width");
-	$(".switch").css("height",y);
+	setCircleAspectRatio();
+	$(window).resize(function(){
+		setCircleAspectRatio();
+	});
 	/*Checkbox change event*/
 	createABC();
 	$(":checkbox").change(function(){
@@ -17,6 +19,12 @@ window.onload = function() {
 	$("#flush").on("click", function(){
 		$(".previous .myCard").remove();
 	});
+}
+
+function setCircleAspectRatio()
+{
+	var y = $(".switch").css("width");
+	$(".switch").css("height",y);
 }
 
 var abc;
