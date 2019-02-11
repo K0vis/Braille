@@ -82,9 +82,12 @@ input:checked + .circle
 	top: 1%;
 	left: 1%;
 	width:33%;
-	background-color: #6c757d;
+	background-color: rgba(67, 97, 112, 0.5);
 	border-radius: 10px;
 	padding: 10px;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 
@@ -106,8 +109,18 @@ input:checked + .circle
 
 body
 {
+	background-image: url("bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-color: #efecec;
 	font-family: monospace;
+	height: 100%;
+}
+
+html
+{
+	height: 100%;
 }
 
 @media(max-width: 1075px)
