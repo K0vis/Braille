@@ -7,6 +7,23 @@
 	text-align: center;
 }
 
+.topMargin{
+	margin-top: 15px;
+}
+
+.white{
+	color: white;
+}
+
+.textareaContainer
+{
+	margin-top: 10px;
+	width:50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
 .results
 {
 	width:100%;
@@ -90,6 +107,12 @@ input:checked + .circle
 	box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
+.pageSwitch{
+	position: absolute;
+	top: 1%;
+	right: 1%;
+}
+
 
 
 #flush
@@ -110,8 +133,9 @@ input:checked + .circle
 body
 {
 	background-image: url("bg.jpg");
+	background-size: cover;
 	background-position: center;
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: cover;
 	background-color: #efecec;
 	font-family: monospace;
