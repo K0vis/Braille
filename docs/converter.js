@@ -45,6 +45,7 @@ function encodeTextarea(){
 				if(!currCap){
 					currCap = true;
 					result += encodeChar("CAP");
+					result += encodeChar("CAP");
 				}
 				
 				currNum = false;
