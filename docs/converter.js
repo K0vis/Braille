@@ -6,6 +6,10 @@ window.onload = function() {
 		encodeTextarea();
 	});
 	
+	$("#fontRange").on("input change", function(e){
+		document.getElementById("outputText").style.fontSize = $(this).val() + "rem";
+	});
+	
 }
 
 function encodeTextarea(){
