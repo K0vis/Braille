@@ -6,6 +6,8 @@ window.onload = function() {
 		encodeTextarea();
 	});
 	
+	$("#fontRange").val(1);
+	
 	$("#fontRange").on("input change", function(e){
 		document.getElementById("outputText").style.fontSize = $(this).val() + "rem";
 	});
@@ -19,6 +21,7 @@ function encodeTextarea(){
 	
 	for(i = 0; i < rows.length; i++){
 		currCap = false;
+		secondCap = false;
 		currNum = false;
 		
 		for(j = 0; j < rows[i].length; j++){
@@ -39,13 +42,20 @@ function encodeTextarea(){
 				"\n" + (i+1) + " sor, " + (j+1) + " karakter.");
 				result += curr;
 				currCap = false;
+				secondCap = false;
 				currNum = false;
 			}
 			else if((/[A-ZÁÉÍÓÖŐÚÜŰ]/).test(curr)){
+				
 				if(!currCap){
 					currCap = true;
+					secondCap = false;
 					result += encodeChar("CAP");
-					result += encodeChar("CAP");
+				}
+				else if(currCap && !secondCap){
+					secondCap = true;
+					pos = result.length-1;
+					result = result.slice(0,pos) + encodeChar("CAP") + result.slice(pos);
 				}
 				
 				currNum = false;
