@@ -59,7 +59,7 @@ function encodeTextarea(){
 				}
 				
 				currNum = false;
-				result += encodeChar(curr);
+				result += encodeChar(curr.toUpperCase());
 			}
 			else if((/[0-9]/).test(curr)){
 				if(!currNum){
