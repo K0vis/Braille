@@ -1,3 +1,55 @@
+#perkins{
+	display: inline;
+	color: #dee2e6;
+	font-size: 60px;
+	vertical-align: middle;
+}
+
+.ogLetter{
+	display:inline-block;
+	height: 70px;
+	width: 70px;
+	margin-left: 10px;
+}
+
+.dot-space-0{
+	display:inline-block;
+    margin-left: 20px;
+	height: 70px;
+	width: 160px;
+	border: 5px solid #dee2e6;
+	border-radius: 20%;
+}
+
+.dot-space-1{
+	display:inline-block;
+    margin-left: 20px;
+	height: 70px;
+	width: 160px;
+	border: 5px solid #dee2e6;
+	border-radius: 20%;
+	background-color: #dee2e6;
+}
+
+.dot-0{
+	display:inline-block;
+    margin-left: 20px;
+	height: 70px;
+	width: 70px;
+	border: 5px solid #dee2e6;
+	border-radius: 50%;
+}
+
+.dot-1{
+	display:inline-block;
+    margin-left: 20px;
+	height: 70px;
+	width: 70px;
+	border: 5px solid #dee2e6;
+	border-radius: 100%;
+	background-color: #dee2e6;
+}
+
 .containerr
 {
 	margin-top: 10px;

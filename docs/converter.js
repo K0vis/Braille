@@ -6,12 +6,66 @@ window.onload = function() {
 		encodeTextarea();
 	});
 	
+	$("#perkinsbtn").on("click", function(){
+		encodePerkins();
+	});
+	
 	$("#fontRange").val(1);
 	
 	$("#fontRange").on("input change", function(e){
 		document.getElementById("outputText").style.fontSize = $(this).val() + "rem";
 	});
 	
+}
+
+function encodePerkins(){
+	var dotEmpty = "<div class=\"dot-0\"></div>";
+	var dotFull = "<div class=\"dot-1\"></div>";
+	var dotSpaceEmpty = "<div class=\"dot-space-0\"></div>";
+	var dotSpaceFull = "<div class=\"dot-space-1\"></div>";
+	dotsOrder = [3,2,1,0,4,5,6];
+	
+	
+	len = document.getElementById("outputText").value.length-1;
+	perkinsResult = "";
+	for(i = 0; i < len; i++){
+		dots = Object.keys(unicode).find(k => unicode[k] == document.getElementById("outputText").value.charAt(i));
+		
+		if(dots != undefined){
+			line = "<p>";
+			for(j = 0; j < dotsOrder.length; j++){
+				if(dots.indexOf(dotsOrder[j]) != -1){
+					if(j == 3){
+						line += dotSpaceFull;
+					}
+					else{
+						line += dotFull;
+					}
+				}
+				else{
+					if(j == 3){
+						line += dotSpaceEmpty;
+					}
+					else{
+						line += dotEmpty;
+					}
+				}
+			}
+			ogLetter = Object.keys(dict).findLast(k => dict[k] == Object.keys(unicode).find(k => unicode[k] == document.getElementById("outputText").value.charAt(i)));
+			if(ogLetter != undefined){ line += "<div class=\"ogLetter\">"+ogLetter+"</div>";}
+			line += "</p>";
+			perkinsResult += line;
+		}
+		else{
+			if(document.getElementById("outputText").value[i] == "\n"){
+				line = "<p>";
+				line += '\u21C8'
+				line += "</p>";
+				perkinsResult += line;
+			}
+		}
+	}
+	document.getElementById("perkins").innerHTML = perkinsResult;
 }
 
 function encodeTextarea(){
